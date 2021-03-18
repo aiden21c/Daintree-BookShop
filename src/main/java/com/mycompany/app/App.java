@@ -1,13 +1,11 @@
-package com.mycompany.app;
+package com.mycompany.App;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+
+    public static void main(String[] args) {
+        Menu ui = new Menu();
+        ui.run();
     }
+
 }
+
