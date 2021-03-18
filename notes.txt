@@ -1,0 +1,8 @@
+Compile Code:
+• mvn Compile
+• mvn exec:java -Dexec.mainClass=com.mycompany.App.App
+
+Questions:
+
+
+Things to Do:
