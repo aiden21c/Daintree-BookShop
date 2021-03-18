@@ -1,6 +1,6 @@
 Compile Code:
-• mvn Compile
-• mvn exec:java -Dexec.mainClass=com.mycompany.App.App
+mvn Compile
+mvn exec:java -Dexec.mainClass=com.mycompany.app.App
 
 Questions:
 
