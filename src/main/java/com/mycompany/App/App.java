@@ -1,4 +1,4 @@
-package com.mycompany.App;
+package com.mycompany.app;
 
 public class App {
 

@@ -1,8 +1,9 @@
-package com.mycompany.App;
+package com.mycompany.app;
 
-import com.mycompany.ManageBook.BookStore;
-import com.mycompany.ManageBook.BookArray;
-import com.mycompany.ManageBook.Book;
+import com.mycompany.managebook.BookStore;
+import com.mycompany.managebook.BookArray;
+import com.mycompany.managebook.Book;
+import com.mycompany.utilities.Utilities;
 import java.util.*;
 
 public class Menu {
@@ -35,7 +36,7 @@ public class Menu {
             while (!v) {
                 System.out.print("Please make a selection: ");
                 selectionString = console.nextLine();
-                v = validInt(selectionString, MINMENUENTRY, MAXMENUENTRY);
+                v = Utilities.validInt(selectionString, MINMENUENTRY, MAXMENUENTRY);
                 if (!v) {
                     System.out.println(N + "Sorry, that is an invalid option!" + N);
                 }
@@ -51,9 +52,9 @@ public class Menu {
             } else if (selection == 4) {
 
             } else if (selection == 5) {
-                System.out.println(bookstore.getBookShelf());
+                System.out.println(N + bookstore.getBookShelf());
             } else if (selection == 0) {
-                System.out.println("Goodbye!");
+                System.out.println(N + "Goodbye!");
                 exit = true;
             }
         }
@@ -91,7 +92,7 @@ public class Menu {
             while (!v) {
                 System.out.print("What is your selection: ");
                 select = console.nextLine();
-                v = validInt(select, MINMENUENTRY, results.size());
+                v = Utilities.validInt(select, MINMENUENTRY, results.size());
                 if (!v) {
                     System.out.println("Sorry, that is an invalid option!");
                 }
@@ -105,48 +106,17 @@ public class Menu {
                     System.out.print("Do you want to buy this as an ebook: ");
                     String input = console.nextLine();
 
-                    while (!validBool(input)) {
+                    while (!Utilities.validBool(input)) {
                         System.out.println("Invalid input. Please answer with \"yes\" or \"no\"");
                         System.out.print("Do you want to buy this as an ebook: ");
                         input = console.nextLine();
                     }
-                    ebook = getBoolValue(input);
+                    ebook = Utilities.getBoolValue(input);
                     
                 }
                 checkoutBook(selectedBook, ebook);
             }
         }
-    }
-
-    private boolean validInt(String s, int min, int max) {
-        boolean valid = false;        
-        if (s.matches("-?\\d+")) {
-            if (Integer.parseInt(s) >= min) {
-                if (Integer.parseInt(s) <= max) {
-                    valid = true;
-                }
-            }
-        }
-        return valid;
-    }
-
-    private boolean validBool(String s) {
-        boolean valid = false;
-        if (s.toLowerCase().equals("no")) {
-            valid = true;
-        } else if (s.toLowerCase().equals("yes")) {
-            valid = true;
-        }
-
-        return valid;
-    }
-
-    private boolean getBoolValue(String s) {
-        boolean b = true;
-        if (s.toLowerCase().equals("no")) {
-            b = false;
-        }
-        return b;
     }
 
     private void checkoutBook(Book b, boolean ebook) {

@@ -1,4 +1,4 @@
-package com.mycompany.ManageBook;
+package com.mycompany.managebook;
 
 // An object used to represent a Book and all its attributes
 public class Book {

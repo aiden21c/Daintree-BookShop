@@ -1,4 +1,4 @@
-package com.mycompany.ManageBook;
+package com.mycompany.managebook;
 
 import java.util.*;
 
