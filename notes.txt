@@ -3,6 +3,6 @@ mvn Compile
 mvn exec:java -Dexec.mainClass=com.mycompany.app.App
 
 Questions:
-HELLO THIS IS A TEST
+
 
 Things to Do:
