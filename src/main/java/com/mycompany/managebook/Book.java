@@ -66,11 +66,6 @@ public class Book {
         setCopies(copies - 1);
     }
 
-    // Checks in book by adding 1 to available copies
-    protected void bookCheckin(){
-        setCopies(copies + 1);
-    }
-
     // Updates how many copies are available, and updates the available boolean based on this
     protected void setCopies(int copies) {
         this.copies = copies;

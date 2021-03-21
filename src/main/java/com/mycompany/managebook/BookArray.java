@@ -37,9 +37,26 @@ public class BookArray {
     // Calls the toString of all objects within the array list, returning them on seperate lines
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < size(); i++) {
-            int count = i + 1;
-            sb.append(count + ". " + books.get(i).toString() + System.lineSeparator());
+        if (books.isEmpty()) {
+            sb.append("No books available to be viewed");
+        } else {
+            for (int i = 0; i < size(); i++) {
+                int count = i + 1;
+                sb.append(System.lineSeparator() + count + ". " + books.get(i).toString());
+            }
+        }
+        return sb.toString();
+    }
+
+    public String titlesToString() {
+        StringBuilder sb = new StringBuilder();
+        if (books.isEmpty()) {
+            sb.append("No books available to be viewed");
+        } else {
+            for (int i = 0; i < size(); i++) {
+                int count = i + 1;
+                sb.append(System.lineSeparator() + count + ". " + books.get(i).getTitle());
+            }
         }
         return sb.toString();
     }

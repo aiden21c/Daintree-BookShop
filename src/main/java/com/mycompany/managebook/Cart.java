@@ -40,4 +40,40 @@ public class Cart {
         }
         return sb.toString();
     }
+
+    protected int getSize() {
+        return cart.size();
+    }
+
+    protected int getEbooks() {
+        int count = 0;
+        for (Book key : cart.keySet()) {
+            if(cart.get(key)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    protected void clear() {
+        cart.clear();
+    }
+
+    protected BookArray getPhysicalBooks() {
+        BookArray physical = new BookArray();
+        for (Book key : cart.keySet()) {
+            if(!cart.get(key)) {
+                physical.addBook(key);
+            }
+        }
+        return physical;
+    }
+
+    protected BookArray cartAsArray() {
+        BookArray books = new BookArray();
+        for (Book key : cart.keySet()) {
+            books.addBook(key);
+        }
+        return books;
+    }
 }

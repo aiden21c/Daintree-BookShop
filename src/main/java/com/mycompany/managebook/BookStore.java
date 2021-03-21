@@ -42,4 +42,28 @@ public class BookStore {
         return cart.addToCart(b, ebook);
     }
 
+    public int getCartSize() {
+        return cart.getSize();
+    }
+
+    public int getEbooks() {
+        return cart.getEbooks();
+    }
+
+    public void checkout() {
+        BookArray physicalBooks = cart.getPhysicalBooks();
+        for (int i = 0; i < physicalBooks.size(); i++) {
+            bookshelf.checkOut(physicalBooks.getElementAt(i));
+        }
+        cart.clear();
+    }
+
+    public BookArray getCartAsArray() {
+        return cart.cartAsArray();
+    }
+
+    public void removeFromCart(Book b) {
+        cart.removeFromCart(b);
+    }
+
 }
