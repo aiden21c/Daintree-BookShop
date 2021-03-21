@@ -6,3 +6,4 @@ Questions:
 
 
 Things to Do:
+• Write Unit Test for all classes that include functions. Each function should have at lest 2 test cases
