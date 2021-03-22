@@ -7,7 +7,7 @@
 *.war
 *.ear
 *.nar
-pom.xml
+## pom.xml
 hs_err_pid*
 
 ##############################
@@ -24,7 +24,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-pom.xml
+## pom.xml
 
 ##############################
 ## Gradle
