@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class AppTest {
+class MenuTest {
 
 	@Test
-	void testMain() {
+	void testRun() {
 		fail("Not yet implemented");
 	}
 
