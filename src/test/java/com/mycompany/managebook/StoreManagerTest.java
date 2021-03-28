@@ -11,11 +11,11 @@ import org.junit.platform.commons.annotation.Testable;
 
 @Testable
 @TestInstance(Lifecycle.PER_CLASS)
-class StoreManagerTest {
+public class StoreManagerTest {
 
-	StoreManager store = new StoreManager();
-	Book book1 = new Book("Absolute Java", "Savitch", 5, true);
-	Book book2 = new Book("JAVA: How to Program", "Deitel and Deitel", 0, true);
+	private StoreManager store = new StoreManager();
+	private Book book1 = new Book("Absolute Java", "Savitch", 5, true);
+	private Book book2 = new Book("JAVA: How to Program", "Deitel and Deitel", 0, true);
 
 	@BeforeAll
 	void addInitialCart() {

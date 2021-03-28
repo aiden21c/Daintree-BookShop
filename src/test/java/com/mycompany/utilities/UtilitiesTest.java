@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
 @Testable
-class UtilitiesTest {
+public class UtilitiesTest {
 
    @Test
    @DisplayName("booleanShouldBeDerivedFromString")

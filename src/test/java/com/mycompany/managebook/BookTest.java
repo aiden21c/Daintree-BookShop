@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
 @Testable
-class BookTest {
+public class BookTest {
 
 	private Book nineteenEightyFour = new Book("Nineteen Eighty-Four", "George Orwell", 4, false);
 	private Book theMessenger = new Book("The Messenger", "Markus Zusak", 1, true);
@@ -55,5 +55,4 @@ class BookTest {
 		"Should be true as there are physical copies available");
 
 	}
-
 }

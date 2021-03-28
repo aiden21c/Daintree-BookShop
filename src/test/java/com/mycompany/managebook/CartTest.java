@@ -9,16 +9,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
 @Testable
-class CartTest {
+public class CartTest {
 
 	private Cart cart = new Cart();
 
 	// Create initial instances of the books
-	Book book1 = new Book("Absolute Java", "Savitch", 5, true);
-	Book book2 = new Book("JAVA: How to Program", "Deitel and Deitel", 0, true);
-	Book book3 = new Book("Computing Concepts with JAVA 8 Essentials", "Horstman", 5, false);
-	Book book4 = new Book("Java Software Solutions", "Lewis and Loftus", 5, false);
-	Book book5 = new Book("Java Program Design", "Cohoon and Davidson", 1, true);
+	private Book book1 = new Book("Absolute Java", "Savitch", 5, true);
+	private Book book2 = new Book("JAVA: How to Program", "Deitel and Deitel", 0, true);
+	private Book book3 = new Book("Computing Concepts with JAVA 8 Essentials", "Horstman", 5, false);
+	private Book book4 = new Book("Java Software Solutions", "Lewis and Loftus", 5, false);
+	private Book book5 = new Book("Java Program Design", "Cohoon and Davidson", 1, true);
 
 
 	@BeforeEach
