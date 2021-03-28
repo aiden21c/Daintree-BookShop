@@ -1,6 +1,6 @@
 package com.mycompany.managebook;
 
-public class BookStore {
+public class StoreManager {
 
     // Create an instace of the bookshelf in order to view all books
     private BookArray bookshelf = new BookArray();

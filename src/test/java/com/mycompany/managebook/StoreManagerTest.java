@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class BookStoreTest {
+class StoreManagerTest {
 
 	@Test
 	void testAddStartBooks() {

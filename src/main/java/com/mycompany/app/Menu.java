@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-import com.mycompany.managebook.BookStore;
+import com.mycompany.managebook.StoreManager;
 import com.mycompany.managebook.BookArray;
 import com.mycompany.managebook.Book;
 import com.mycompany.utilities.Utilities;
@@ -17,7 +17,7 @@ public class Menu {
     private boolean exit = false;
 
     // Create an instance of the book store
-    private BookStore bookstore = new BookStore();
+    private StoreManager bookstore = new StoreManager();
 
     // Parameter values a user is able to enter when interacting with the main menu
     int MINMENUENTRY = 0;

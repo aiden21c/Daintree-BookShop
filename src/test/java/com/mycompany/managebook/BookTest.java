@@ -2,53 +2,58 @@ package com.mycompany.managebook;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.annotation.Testable;
 
+@Testable
 class BookTest {
 
+	private Book nineteenEightyFour = new Book("Nineteen Eighty-Four", "George Orwell", 4, false);
+	private Book theMessenger = new Book("The Messenger", "Markus Zusak", 1, true);
+
 	@Test
+	@DisplayName("formattedStringShouldBeCreatedOfBook")
 	void testToString() {
-		fail("Not yet implemented");
+		assertEquals("Nineteen Eighty-Four -- George Orwell, 4 copies, no ebook", 
+		nineteenEightyFour.toString(), "Should return book values in specified format");
+
+		assertEquals("The Messenger -- Markus Zusak, 1 copies, ebook available", 
+		theMessenger.toString(), "Should return book values in specified format");
 	}
 
 	@Test
-	void testGetTitle() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetAuthor() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetTitleAuth() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetCopies() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetEbook() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetAvailable() {
-		fail("Not yet implemented");
-	}
-
-	@Test
+	@DisplayName("bookCopiesShouldReduceByOne")
 	void testBookCheckout() {
-		fail("Not yet implemented");
+		int initialCopies = nineteenEightyFour.getCopies();
+		nineteenEightyFour.bookCheckout();
+		assertEquals(initialCopies - 1, nineteenEightyFour.getCopies(), 
+		"Should reduce the number of copies by one");
+
+		initialCopies = theMessenger.getCopies();
+		theMessenger.bookCheckout();
+		assertEquals(initialCopies - 1, theMessenger.getCopies(), 
+		"Should reduce the number of copies by one");
 	}
 
 	@Test
+	@DisplayName("bookCopiesShouldChangeToGivenValue")
 	void testSetCopies() {
-		fail("Not yet implemented");
+		int testCopies = 0;
+		nineteenEightyFour.setCopies(testCopies);
+		assertEquals(testCopies, nineteenEightyFour.getCopies(), 
+		"Should change copies to the testCopies value");
+		assertFalse(nineteenEightyFour.getAvailable(), 
+		"Should be false as there are no physical copies available");
+
+		testCopies = 30;
+		theMessenger.setCopies(testCopies);
+		assertEquals(testCopies, theMessenger.getCopies(), 
+		"Should change copies to the testCopies value");
+		assertTrue(theMessenger.getAvailable(), 
+		"Should be true as there are physical copies available");
+
 	}
 
 }
