@@ -8,8 +8,12 @@ public class StoreManager {
     // Create a new shopping cart
     private Cart cart = new Cart();
 
+    public StoreManager() {
+        addStartBooks();
+    }
+
     // Add the base books that should be available
-    public void addStartBooks() {
+    private void addStartBooks() {
         Book book1 = new Book("Absolute Java", "Savitch", 5, true);
         bookshelf.addBook(book1);
         Book book2 = new Book("JAVA: How to Program", "Deitel and Deitel", 0, true);
@@ -65,5 +69,4 @@ public class StoreManager {
     public void removeFromCart(Book b) {
         cart.removeFromCart(b);
     }
-
 }

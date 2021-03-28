@@ -33,7 +33,6 @@ public class Menu {
     // The method that runs the UI
     public void run() {
         System.out.print("Welcome to Daintree!");
-        bookstore.addStartBooks();
 
         while (!exit) {
             System.out.print(printMenu());

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
+@Testable
 class CartTest {
 
 	private Cart cart = new Cart();
