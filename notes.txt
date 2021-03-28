@@ -2,6 +2,12 @@ Compile Code:
 mvn Compile
 mvn exec:java -Dexec.mainClass=com.mycompany.app.App
 
+# Run a single test class.
+$ mvn -Dtest=TestApp1 test
+
+# Run a single test method from a test class.
+$ mvn -Dtest=TestApp1#methodname test
+
 Questions:
 
 
