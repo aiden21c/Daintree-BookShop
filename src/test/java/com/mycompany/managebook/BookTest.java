@@ -2,7 +2,6 @@ package com.mycompany.managebook;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
@@ -16,11 +15,12 @@ class BookTest {
 	@Test
 	@DisplayName("formattedStringShouldBeCreatedOfBook")
 	void testToString() {
-		assertEquals("Nineteen Eighty-Four -- George Orwell, 4 copies, no ebook", 
-		nineteenEightyFour.toString(), "Should return book values in specified format");
-
-		assertEquals("The Messenger -- Markus Zusak, 1 copies, ebook available", 
-		theMessenger.toString(), "Should return book values in specified format");
+		assertAll("Should return book values in specified format",
+			() -> assertEquals("Nineteen Eighty-Four -- George Orwell, 4 copies, no ebook", 
+				nineteenEightyFour.toString()),
+			() -> assertEquals("The Messenger -- Markus Zusak, 1 copies, ebook available", 
+				theMessenger.toString())
+		);
 	}
 
 	@Test

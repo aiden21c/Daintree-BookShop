@@ -11,35 +11,29 @@ class UtilitiesTest {
 
    @Test
    @DisplayName("booleanShouldBeDerivedFromString")
-   void testGetBoolValue() {
-        assertTrue(Utilities.getBoolValue("yes"), 
-        "Should return boolean value equal to string");
-
-        assertFalse(Utilities.getBoolValue("nO"), 
-        "Should return boolean value equal to string");
-    }
+   void testGetBoolValue() {        
+      assertAll("Should return boolean value equal to string",
+         () -> assertTrue(Utilities.getBoolValue("yes")),
+         () -> assertFalse(Utilities.getBoolValue("nO"))
+      );
+   }
 
    @Test
    @DisplayName("booleanShouldBeValidatedFromString")
    void testValidBool() {
-      assertTrue(Utilities.validBool("YES"), 
-	  "Should return true if string can be mapped to boolean");
-
-      assertFalse(Utilities.validBool("nothanks"), 
-	  "Should return true if string can be mapped to boolean");
-   	}
+      assertAll("Should return true if string can be mapped to boolean",
+         () -> assertTrue(Utilities.validBool("YES")),
+         () -> assertFalse(Utilities.validBool("nothanks"))
+      );
+   }
 
    @Test
    @DisplayName("stringShouldBeIntegerBetweenSpecificRange")
    void testValidInt() {
-      assertTrue(Utilities.validInt("4", 0, 5), 
-	  "Should return true if the string is an int and lies between the range");
-
-      assertFalse(Utilities.validInt("7", 0, 4), 
-	  "Should return true if the string is an int and lies between the range");
-
-      assertFalse(Utilities.validInt("four", 0, 5), 
-	  "Should return true if the string is an int and lies between the range");
-   	}
-
+      assertAll("Should return true if the string is an int and lies between the range",
+         () -> assertTrue(Utilities.validInt("4", 0, 5)),
+         () -> assertFalse(Utilities.validInt("7", 0, 4)),
+         () -> assertFalse(Utilities.validInt("four", 0, 5))
+      );
+   }
 }
