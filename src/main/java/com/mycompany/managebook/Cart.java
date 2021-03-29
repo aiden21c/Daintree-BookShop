@@ -32,19 +32,22 @@ public class Cart {
         if (cart.isEmpty()) {
             sb.append("No books available to be viewed");
         } else {
+            sb.append("Your shopping cart contains the following:");
             int count = 1;
             for (Book key : cart.keySet()) {
-                sb.append(count + ". " + key.getTitle() + System.lineSeparator());
+                sb.append(System.lineSeparator() + count + ". " + key.getTitle());
                 count++;
             }
         }
         return sb.toString();
     }
 
+    // Returns the number of keys contained within the map, and hence its size
     protected int getSize() {
         return cart.size();
     }
 
+    // Returns the number of keys whose ebook value is true
     protected int getEbooks() {
         int count = 0;
         for (Book key : cart.keySet()) {
@@ -55,11 +58,13 @@ public class Cart {
         return count;
     }
 
+    // Removes all items from cart
     protected void clear() {
         cart.clear();
     }
 
-    protected BookArray getPhysicalBooks() {
+    // Returns the number of keys whose ebook value is false
+        protected BookArray getPhysicalBooks() {
         BookArray physical = new BookArray();
         for (Book key : cart.keySet()) {
             if(!cart.get(key)) {
@@ -69,6 +74,7 @@ public class Cart {
         return physical;
     }
 
+    // Returns all the books in the cart as a book array
     protected BookArray cartAsArray() {
         BookArray books = new BookArray();
         for (Book key : cart.keySet()) {

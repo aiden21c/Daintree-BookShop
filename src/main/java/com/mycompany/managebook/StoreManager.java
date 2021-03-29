@@ -8,6 +8,7 @@ public class StoreManager {
     // Create a new shopping cart
     private Cart cart = new Cart();
 
+    // Constructor which calls the method add the start books, initialising the bookshelf
     public StoreManager() {
         addStartBooks();
     }
@@ -46,14 +47,22 @@ public class StoreManager {
         return cart.addToCart(b, ebook);
     }
 
+    // Calls the method from the cart class to remove a book
+    public void removeFromCart(Book b) {
+        cart.removeFromCart(b);
+    }
+
+    // Returns the size of the cart
     public int getCartSize() {
         return cart.getSize();
     }
 
+    // Returns the number of ebooks within the cart
     public int getEbooks() {
         return cart.getEbooks();
     }
 
+    // "Checks out" the books in the cart, and clears the cart
     public void checkout() {
         BookArray physicalBooks = cart.getPhysicalBooks();
         for (int i = 0; i < physicalBooks.size(); i++) {
@@ -62,11 +71,8 @@ public class StoreManager {
         cart.clear();
     }
 
+    // Returns the cart as a book array
     public BookArray getCartAsArray() {
         return cart.cartAsArray();
-    }
-
-    public void removeFromCart(Book b) {
-        cart.removeFromCart(b);
     }
 }

@@ -45,8 +45,7 @@ public class Menu {
             } 
             // View Shopping Cart
             else if (selection == 2) {
-                System.out.println(N + "Your shopping cart contains the following:");
-                System.out.println(bookstore.getCart());
+                System.out.println(N + bookstore.getCart());
             }
             // Remove a book from shopping cart
             else if (selection == 3) {
@@ -68,6 +67,7 @@ public class Menu {
         }
     }
 
+    // Formats and returns the menu interface as a string
     private String printMenu() {
         StringBuilder sb = new StringBuilder();
         sb.append(N + "Choose an option:" + N);
@@ -80,6 +80,7 @@ public class Menu {
         return sb.toString();
     }
 
+    // Asks the user for a title to search for, provides options and adds selected option to cart
     private void addBookToCart() {
         System.out.print(N + "Enter title to search for: ");
         String searchTitle = console.nextLine();
@@ -110,6 +111,7 @@ public class Menu {
         }
     }
 
+    // Adds the selected book to the cart
     private void checkoutBook(Book b, boolean ebook) {
         boolean checkout = b.getAvailable();
         if (!checkout && !ebook) {
@@ -123,11 +125,11 @@ public class Menu {
         }
     }
 
+    // Lists the current cart contents, and removes a selected book from the cart
     private void removeFromCart() {
         int cartSize = bookstore.getCartSize();
         BookArray cartArray = bookstore.getCartAsArray();
-        System.out.println(N + "Your shopping cart contains the following:");
-        System.out.println(cartArray.titlesToString());
+        System.out.println(N + cartArray.titlesToString());
         if (cartSize != 0) {
             System.out.println("0. Cancel");
             String input = "";
@@ -145,6 +147,7 @@ public class Menu {
         }
     }
 
+    // Finalises the transaction and prints the transaction value based on cart contents
     private String checkout() {
         StringBuilder sb = new StringBuilder();
         int cartSize = bookstore.getCartSize();
@@ -163,7 +166,8 @@ public class Menu {
         return sb.toString();
     }
 
-
+    // Prompts the user to input an int, and checked whether this in lies between the given parameters
+        // Continues looping until the user enters a valid integer
     private int getIntInput(String select, int upperLimit, String prompt) {
         boolean v = false;
         while (!v) {
@@ -177,7 +181,9 @@ public class Menu {
         return Integer.parseInt(select);
     }
 
-    private boolean getBooleanInput(String prompt) {
+    // Prompts the user for a string, and checks whether this string can be mapped to a boolean
+        // Continues looping until the user enters a valid integer
+        private boolean getBooleanInput(String prompt) {
         String input = console.nextLine();
         while (!Utilities.validBool(input)) {
             System.out.println("Invalid input. Please answer with \"yes\" or \"no\"");

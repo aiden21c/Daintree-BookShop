@@ -48,6 +48,7 @@ public class BookArray {
         return sb.toString();
     }
 
+    // Returns a formatted string list of only the titles of the books
     public String titlesToString() {
         StringBuilder sb = new StringBuilder();
         if (books.isEmpty()) {
@@ -76,5 +77,4 @@ public class BookArray {
         }
         return results; 
     }
-
 }

@@ -3,13 +3,10 @@ $ mvn Compile
 $ mvn exec:java -Dexec.mainClass=com.mycompany.app.BookStore
 
 # Run a single test class
-$ mvn -Dtest=TestApp1 test
+$ mvn -Dtest=<TestApp1> test
 
 # Run a single test method from a test class
-$ mvn -Dtest=TestApp1#methodname test
+$ mvn -Dtest=<TestApp1>#<methodname> test
 
 # Run all test classes
 $ mvn test
-
-# Things to Do:
-# • Write Unit Test for all classes that include functions. Each function should have at lest 2 test cases
