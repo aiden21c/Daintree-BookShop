@@ -57,7 +57,7 @@ public class Menu {
             } 
             // List all books 
             else if (selection == 5) {
-                System.out.println(N + bookstore.getBookShelf());
+                System.out.println(bookstore.getBookShelf());
             } 
             // Quit
             else if (selection == 0) {
@@ -129,7 +129,7 @@ public class Menu {
     private void removeFromCart() {
         int cartSize = bookstore.getCartSize();
         BookArray cartArray = bookstore.getCartAsArray();
-        System.out.println(N + cartArray.titlesToString());
+        System.out.println(cartArray.titlesToString());
         if (cartSize != 0) {
             System.out.println("0. Cancel");
             String input = "";

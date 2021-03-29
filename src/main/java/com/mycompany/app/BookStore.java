@@ -5,6 +5,5 @@ public class BookStore {
         Menu ui = new Menu();
         ui.run();
     }
-
 }
 
